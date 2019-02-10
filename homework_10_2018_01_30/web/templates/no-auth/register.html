@@ -1,0 +1,26 @@
+{{ define "register" }}
+<div class="register-form">
+    <form action="/register">
+            <fieldset>
+                <legend>Type information for register</legend>
+                <p>
+                    <label for="login">Login </label
+                    ><input type="text" id="login" name="login" pattern=".{3,}" title="three or more characters" autofocus required/>
+                </p>
+                <p>
+                    <label for="password">Password </label
+                    ><input type="password" id="password" name="password" pattern=".{3,}" title="three or more characters" required/>
+                </p>
+                <p>
+                    <label for="name">Name </label
+                    ><input type="text" id="name" name="name" pattern=".{3,}" title="three or more characters" required/>
+                </p>
+                <p>
+                    <label for="age">Age </label
+                    ><input type="number" min="16" max="99" id="age" name="age" required/>
+                </p>
+            </fieldset>
+            <p><input type="submit" value="Register" /></p>
+    </form>
+</div>
+{{ end }}
