@@ -127,7 +127,6 @@ func getSudokuStringsFromDirectory(dir string) error {
 	}
 	for _, file := range d {
 		if !file.IsDir() {
-			fmt.Println(file.IsDir())
 			s, err := ioutil.ReadFile(dir + `\` + file.Name())
 			if err != nil {
 				log.Fatal(err)

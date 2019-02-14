@@ -10,6 +10,18 @@ import (
 )
 
 var countIteration int
+var printVals = map[uint8]string{
+	0:". ",
+	1:"1 ",
+	2:"2 ",
+	3:"3 ",
+	4:"4 ",
+	5:"5 ",
+	6:"6 ",
+	7:"7 ",
+	8:"8 ",
+	9:"9 ",
+}
 
 func startSolveSudoku(sudoku string) error {
 	countIteration = 0
@@ -143,28 +155,7 @@ func printTable(label string, array *[][]uint8) {
 			if j%size == 0 {
 				fmt.Fprint(writter, "| ")
 			}
-			switch (*array)[i][j] {
-			case 0:
-				fmt.Fprint(writter, ". ")
-			case 1:
-				fmt.Fprint(writter, "1 ")
-			case 2:
-				fmt.Fprint(writter, "2 ")
-			case 3:
-				fmt.Fprint(writter, "3 ")
-			case 4:
-				fmt.Fprint(writter, "4 ")
-			case 5:
-				fmt.Fprint(writter, "5 ")
-			case 6:
-				fmt.Fprint(writter, "6 ")
-			case 7:
-				fmt.Fprint(writter, "7 ")
-			case 8:
-				fmt.Fprint(writter, "8 ")
-			case 9:
-				fmt.Fprint(writter, "9 ")
-			}
+			fmt.Fprint(writter, printVals[(*array)[i][j]])
 		}
 		fmt.Fprintln(writter, "|")
 	}
