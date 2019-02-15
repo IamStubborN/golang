@@ -85,16 +85,15 @@ func createTableFromString(sudoku string) (*[][]uint8, error) {
 }
 
 func isCorrect(row, col int, num uint8, array *[][]uint8) bool {
-	for d := range *array {
-		if (*array)[row][d] == num {
+	for idx := range *array {
+		if (*array)[row][idx] == num {
+			return false
+		}
+		if (*array)[idx][col] == num {
 			return false
 		}
 	}
-	for r := range *array {
-		if (*array)[r][col] == num {
-			return false
-		}
-	}
+
 	sqrt := int(math.Sqrt(float64(len(*array))))
 	boxRowStart := row - row%sqrt
 	boxColStart := col - col%sqrt
