@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 )
+
 // InitCache return cache instance
 func InitCache() Cache {
 	return make(Cache)

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/IamStubborN/golang/homework_1_2018_12_05/conv"
 	"fmt"
+	"github.com/IamStubborN/golang/homework_1_2018_12_05/conv"
 	"reflect"
 )
 

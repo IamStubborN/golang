@@ -1,6 +1,5 @@
 package main
 
-
 // Databaser interface for work with DB's
 type Databaser interface {
 	CheckUser(login string) error

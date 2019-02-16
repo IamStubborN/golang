@@ -17,9 +17,9 @@ func main() {
 	fmt.Println(result)
 }
 
-// Validate validate string by Luhn algoritm
+// Validate validate string by Luhn algorithm
 func Validate(str string) (string, error) {
-	err := runSteps(&str, trimSpaces, checkLengh, calculateResults)
+	err := runSteps(&str, trimSpaces, checkLength, calculateResults)
 	if err != nil {
 		return "", err
 	}
@@ -37,9 +37,9 @@ func runSteps(str *string, funcs ...func(*string) error) error {
 	return err
 }
 
-func checkLengh(str *string) error {
+func checkLength(str *string) error {
 	if len(*str) <= 1 {
-		return fmt.Errorf("You have bad lengh %v", len(*str))
+		return fmt.Errorf("you have bad lengh %v", len(*str))
 	}
 	return nil
 }
@@ -52,7 +52,7 @@ func trimSpaces(str *string) error {
 		} else if unicode.IsDigit(r) {
 			tempString += string(r)
 		} else {
-			return fmt.Errorf("You have bad symbol %q", string(r))
+			return fmt.Errorf("you have bad symbol %q", string(r))
 		}
 	}
 	*str = tempString
@@ -83,5 +83,5 @@ func calculateResults(str *string) error {
 	if sum%10 == 0 {
 		return nil
 	}
-	return fmt.Errorf("You have not valid card with %v sum", sum)
+	return fmt.Errorf("you have not valid card with %v sum", sum)
 }
